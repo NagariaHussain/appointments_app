@@ -76,7 +76,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-12 15:59:10.929889",
+ "modified": "2023-07-12 16:29:02.657535",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Appointment",
@@ -97,9 +97,11 @@
   }
  ],
  "quick_entry": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "patient_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
