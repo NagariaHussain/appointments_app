@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2023-07-12 15:56:10.437220",
+ "modified": "2023-07-12 16:09:50.832855",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "book-appointment",
@@ -65,6 +65,19 @@
    "label": "Date",
    "max_length": 0,
    "max_value": 0,
+   "read_only": 0,
+   "reqd": 1,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "shift",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Shift",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Schedule Shift",
    "read_only": 0,
    "reqd": 1,
    "show_in_filter": 0

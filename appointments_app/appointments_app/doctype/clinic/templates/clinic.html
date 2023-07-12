@@ -16,11 +16,11 @@
 
 <p><strong>Timings</strong></p>
 
-{% set shifts = frappe.get_list("Schedule Shift", filters={"clinic": doc.name}, fields=["start_time", "end_time"]) %}
+{% set shifts = frappe.get_list("Schedule Shift", filters={"clinic": doc.name}, fields=["title"]) %}
 
 <ul>
 {% for shift in shifts %}
-    <li>{{ shift.start_time }} - {{ shift.end_time }}</li>
+    <li>{{ shift.title }}</li>
 {% endfor %}
 </ul>
 
