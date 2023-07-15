@@ -8,6 +8,8 @@ from frappe.model.document import Document
 class Appointment(Document):
 	def after_insert(self):
 		self.queue_number = self.add_to_appointment_queue()
+		# attach csrf token + queue number as key and queue number as value
+		frappe.cache.set_value(f"{frappe.session.sid}:queue_number", self.queue_number) 
 		self.save(ignore_permissions=True)
 
 	def add_to_appointment_queue(self):
