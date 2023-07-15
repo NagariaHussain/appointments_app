@@ -128,23 +128,11 @@ app_license = "AGPL 3.0"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"appointments_app.tasks.all"
-#	],
-#	"daily": [
-#		"appointments_app.tasks.daily"
-#	],
-#	"hourly": [
-#		"appointments_app.tasks.hourly"
-#	],
-#	"weekly": [
-#		"appointments_app.tasks.weekly"
-#	],
-#	"monthly": [
-#		"appointments_app.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+	"daily": [
+		"appointments_app.appointments_app.doctype.appointment_queue.appointment_queue.create_queues_for_today"
+	]
+}
 
 # Testing
 # -------
