@@ -10,7 +10,7 @@
 <p>{{ doc.contact_number }}</p>
 
 {% set doctor = frappe.get_doc("Doctor", doc.doctor) %}
-<p><strong>Doctor</strong></p>
+<p><strong>Doctor</strong> <span id="status-badge" class="badge badge-{{'success' if doc.doctor_in else 'secondary'}}">{{ 'IN' if doc.doctor_in else 'OUT'}}</span></p>
 <p>{{ doctor.full_name }}, {{ doctor.speciality }}</p>
 
 
@@ -19,12 +19,28 @@
 {% set shifts = frappe.get_list("Schedule Shift", filters={"clinic": doc.name}, fields=["title"]) %}
 
 <ul>
-{% for shift in shifts %}
+    {% for shift in shifts %}
     <li>{{ shift.title }}</li>
-{% endfor %}
+    {% endfor %}
 </ul>
 
 <a href="/book-appointment/new?clinic={{doc.name}}" class="btn btn-info">Book Appointment</a>
+
+<script>
+    frappe.ready(() => {
+        console.log("frappe ready")
+        frappe.realtime.on("doctor_status_changed", (data) => {
+            console.log("doctor status changed", data)
+            if (data.clinic == "Kale Nursing Home") {
+                if (data.updated_status == "IN") {
+                    $("#status-badge").removeClass("badge-secondary").addClass("badge-success").text("IN")
+                } else {
+                    $("#status-badge").removeClass("badge-success").addClass("badge-secondary").text("OUT")
+                }
+            }
+        })
+    })
+</script>
 
 {% endblock %}
 

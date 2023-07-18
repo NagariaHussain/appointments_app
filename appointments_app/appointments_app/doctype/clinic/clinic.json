@@ -14,6 +14,7 @@
   "route",
   "column_break_ypgz",
   "is_published",
+  "doctor_in",
   "address"
  ],
  "fields": [
@@ -50,6 +51,12 @@
    "label": "Doctor",
    "options": "Doctor",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "doctor_in",
+   "fieldtype": "Check",
+   "label": "Doctor In"
   }
  ],
  "has_web_view": 1,
@@ -61,7 +68,7 @@
    "link_fieldname": "clinic"
   }
  ],
- "modified": "2023-07-15 21:44:34.416008",
+ "modified": "2023-07-18 09:28:03.516252",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Clinic",
