@@ -25,7 +25,9 @@
 </ul>
 
 <a href="/book-appointment/new?clinic={{doc.name}}" class="btn btn-info">Book Appointment</a>
+{% endblock %}
 
+{% block script %}
 <script>
     frappe.ready(() => {
         console.log("frappe ready")
@@ -41,7 +43,6 @@
         })
     })
 </script>
-
 {% endblock %}
 
 <!-- this is a sample default web page template -->
