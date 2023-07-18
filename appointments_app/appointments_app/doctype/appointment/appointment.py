@@ -9,15 +9,16 @@ class Appointment(Document):
 	def after_insert(self):
 		self.queue_number = self.add_to_appointment_queue()
 		# attach csrf token + queue number as key and queue number as value
-		frappe.cache.set_value(f"{frappe.session.sid}:queue_number", self.queue_number) 
+		frappe.cache.set_value(f"{frappe.session.sid}:queue_number", self.queue_number)
 		self.save(ignore_permissions=True)
+		self.send_confirmation_message()
 
 	def add_to_appointment_queue(self):
 		filters = {
-				"date": self.date,
-				"shift": self.shift,
-				"clinic": self.clinic,
-			}
+			"date": self.date,
+			"shift": self.shift,
+			"clinic": self.clinic,
+		}
 		appointment_queue_exists = frappe.db.exists(
 			"Appointment Queue",
 			filters,
@@ -29,8 +30,16 @@ class Appointment(Document):
 			q = frappe.new_doc("Appointment Queue")
 			q.update(filters)
 			q.save(ignore_permissions=True)
-	
+
 		q.append("queue", {"appointment": self.name, "status": "Pending"})
 		q.save(ignore_permissions=True)
 
 		return len(q.queue)
+
+	def send_confirmation_message(self):
+		frappe.enqueue(
+			"appointments_app.utils.send_message",
+			body=f"Appointment Booked! Your queue number is {self.queue_number} at {self.clinic} on {self.date}",
+			from_="+18149047351",
+			to=self.contact_number,
+		)
