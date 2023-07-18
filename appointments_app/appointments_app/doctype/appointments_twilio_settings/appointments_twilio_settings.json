@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "account_sid",
+  "from_phone_number",
+  "column_break_siun",
   "auth_token"
  ],
  "fields": [
@@ -20,12 +22,21 @@
    "fieldname": "auth_token",
    "fieldtype": "Password",
    "label": "Auth Token"
+  },
+  {
+   "fieldname": "from_phone_number",
+   "fieldtype": "Data",
+   "label": "From Phone Number"
+  },
+  {
+   "fieldname": "column_break_siun",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-07-18 08:53:42.241959",
+ "modified": "2023-07-18 10:06:52.345609",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Appointments Twilio Settings",

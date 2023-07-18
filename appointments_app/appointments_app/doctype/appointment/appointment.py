@@ -40,6 +40,8 @@ class Appointment(Document):
 		frappe.enqueue(
 			"appointments_app.utils.send_message",
 			body=f"Appointment Booked! Your queue number is {self.queue_number} at {self.clinic} on {self.date}",
-			from_="+18149047351",
+			from_=frappe.db.get_single_value(
+				"Appointments Twilio Settings", "from_phone_number"
+			),
 			to=self.contact_number,
 		)
