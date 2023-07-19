@@ -30,9 +30,7 @@
 {% block script %}
 <script>
     frappe.ready(() => {
-        console.log("frappe ready")
         frappe.realtime.on("doctor_status_changed", (data) => {
-            console.log("doctor status changed", data)
             if (data.clinic == "Kale Nursing Home") {
                 if (data.updated_status == "IN") {
                     $("#status-badge").removeClass("badge-secondary").addClass("badge-success").text("IN")
