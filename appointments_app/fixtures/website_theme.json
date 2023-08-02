@@ -1,0 +1,28 @@
+[
+ {
+  "background_color": null,
+  "button_gradients": 0,
+  "button_rounded_corners": 1,
+  "button_shadows": 0,
+  "custom": 1,
+  "custom_overrides": null,
+  "custom_scss": null,
+  "dark_color": null,
+  "docstatus": 0,
+  "doctype": "Website Theme",
+  "font_properties": "wght@300;400;500;600;700;800",
+  "font_size": null,
+  "google_font": "poppins",
+  "ignored_apps": [],
+  "js": null,
+  "light_color": "Cyan 100",
+  "modified": "2023-08-02 22:55:21.364939",
+  "module": "Website",
+  "name": "JDP Doctors",
+  "primary_color": "Cyan 500",
+  "text_color": null,
+  "theme": "JDP Doctors",
+  "theme_scss": "\n@import url(\"https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800&display=swap\");\n$font-family-sans-serif: \"poppins\", -apple-system, BlinkMacSystemFont,\n\t\"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\",\n\t\"Droid Sans\", \"Helvetica Neue\", sans-serif;\n$primary: #34BAE3;$enable-shadows: false;\n$enable-gradients: false;\n$enable-rounded: true;\n\n// Bootstrap Variable Overrides\n\n\n// Import themes from installed apps\n@import \"frappe/public/scss/website.bundle\";\n\n\n\n// Custom Theme\n\n\n:root {\n\t\n\t--primary: #{$primary};\n\t--primary-color: #{$primary};\n\t}\n",
+  "theme_url": "/files/website_theme/jdp_doctors_27670eb2.css"
+ }
+]
