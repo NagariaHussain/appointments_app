@@ -1,8 +1,16 @@
-<div>
-	<a href="{{ doc.route }}">{{ doc.title or doc.name }}</a>
-
-	<div>
-		<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="eHZ2pti" data-color="#125c73" data-emoji=""  data-font="Poppins" data-text="Buy me a Chai" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-	</div>
-</div>
-<!-- this is a sample default list template -->
+	<a href="{{ doc.route }}">
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="{{ doc.clinic_image }}" alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">{{ doc.get_title() }}</h5>
+						<p class="card-text">Dr.Manish Kale, Pediatrician</p>
+						<p class="card-text"><small class="text-muted">{{ doc.address }}</small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</a>

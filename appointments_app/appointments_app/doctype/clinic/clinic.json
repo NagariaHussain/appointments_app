@@ -15,7 +15,8 @@
   "column_break_ypgz",
   "is_published",
   "doctor_in",
-  "address"
+  "address",
+  "clinic_image"
  ],
  "fields": [
   {
@@ -57,9 +58,16 @@
    "fieldname": "doctor_in",
    "fieldtype": "Check",
    "label": "Doctor In"
+  },
+  {
+   "fieldname": "clinic_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Clinic Image"
   }
  ],
  "has_web_view": 1,
+ "image_field": "clinic_image",
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [
@@ -68,7 +76,7 @@
    "link_fieldname": "clinic"
   }
  ],
- "modified": "2023-07-18 09:28:03.516252",
+ "modified": "2023-08-02 23:20:26.105887",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Clinic",
